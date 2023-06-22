@@ -1,13 +1,11 @@
 #!/usr/bin/python
 # coding: utf-8
 
-# In[3]:
+ 
 import train_92
 from train_92 import *
 
-
-
-# In[10]:
+ 
 
 #class Model(nn.Module):
 #    def __init__(self):
@@ -53,17 +51,7 @@ if __name__ == "__main__":
 #b = a.unsqueeze(0)
 #print(b.shape)
 
-
-
-
-
-
-
-
-# In[ ]:
-
-
-
+ 
 
  
 #a = load_image_3d(scan_id="Pcnls_1")
