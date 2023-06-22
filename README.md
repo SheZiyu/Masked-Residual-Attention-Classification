@@ -1,4 +1,4 @@
-# Unsupervised-Attention-Classification
+# Unsupervised Residual Attention Classification
 
 The code is derivated from the following paper and github repository:
 
