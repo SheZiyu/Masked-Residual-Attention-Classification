@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # coding: utf-8
-
-# In[6]:
-
+ 
 
 import os
 import io
@@ -138,9 +136,5 @@ def hms_string(sec_elapsed):
     
     return "{}:{:>02}:{:>05.2f}".format(h, m, s)
 
-
-# In[3]:
-
-
-#pip list
-
+ 
+ 
