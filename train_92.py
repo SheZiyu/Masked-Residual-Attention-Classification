@@ -425,8 +425,7 @@ class Trainer:
         print(message.format(*args), end=end)
 
 
-# In[6]:
-
+ 
 
 #torch.cuda.empty_cache()
 # = torch.device("cuda" if torch.cuda.is_available() else "cpu")
