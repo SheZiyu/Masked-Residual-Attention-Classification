@@ -1,14 +1,10 @@
 #!/usr/bin/python
 # coding: utf-8
-
-# In[3]:
+ 
 import train_56
 from train_56 import *
 
-
-
-# In[10]:
-
+ 
 #class Model(nn.Module):
 #    def __init__(self):
 #        super().__init__()
@@ -53,16 +49,7 @@ if __name__ == "__main__":
 #b = a.unsqueeze(0)
 #print(b.shape)
 
-
-
-
-
-
-
-
-# In[ ]:
-
-
+ 
 
 
  
