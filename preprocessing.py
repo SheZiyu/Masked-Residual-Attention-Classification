@@ -1,14 +1,12 @@
 #!/usr/bin/python
 # coding: utf-8
 
-# In[1]:
+ 
 
 import dependencies
 from dependencies import *
 
-
-# In[5]:
-
+ 
 
 # Transform .nrrd to .nii 
 # Load images
@@ -28,8 +26,7 @@ def _load_raw_image(in_files, out_files):
 #    _load_raw_image(i, j)
 
 
-# In[6]:
-
+ 
 
 # Transform .nrrd to .nii 
 # Load images
@@ -42,10 +39,7 @@ def load_raw_image(scan_id, in_files, out_files):
         sitk.WriteImage(img, out_file)
         #img = sitk.ReadImage(out_file)
 
-
-
-# In[8]:
-
+ 
 
 #inputs = {
        # "image": "D:\\down\\Pcnls_1\\Pcnls_baseline\\Flair_res111.nii.gz",
@@ -58,10 +52,7 @@ def load_raw_image(scan_id, in_files, out_files):
 #print(f"image.shape: {T1['image'].max()}")
 #print(f"image.shape: {T1['image'].mean()}")
 
-
-# In[9]:
-
-
+ 
 def show_plt(array, title):
     rows, cols = 1, 3
     plt.figure(figsize=(10, 10), dpi=80)
@@ -88,14 +79,11 @@ def show_plt(array, title):
 
     plt.show()
 
-
-# In[10]:
-
+ 
 
 #show_plt(T1["image"], "before resampling")
 
-
-# In[11]:
+ 
 
 
 #T2 = AddChanneld(keys=["image"])(copy.deepcopy(T1))
@@ -108,13 +96,13 @@ def show_plt(array, title):
 #print(f"image.shape: {T2['image'].mean()}")
 
 
-# In[12]:
+ 
 
 
 #show_plt(T2["image"][0], "after resampling")
 
 
-# In[78]:
+ 
 
 
 def get_foreground_from_set_of_files(scan_id, set_of_files, background_value=0, tolerance=0.00001):
@@ -147,7 +135,7 @@ def get_foreground_from_set_of_files(scan_id, set_of_files, background_value=0, 
     return foreground
 
 
-# In[79]:
+ 
 
 
 set_of_files = (["T13D_res111.nii.gz"])
@@ -157,10 +145,7 @@ scan_ids = list(train_df["Patient"])
 for scan_id in scan_ids:
     get_foreground_from_set_of_files(scan_id, set_of_files, background_value=0, tolerance=0.00001)
     
-    
-
-
-# In[82]:
+ 
 
 
 def get_foreground_from_set_of_files_withoutsave(scan_id, set_of_files, background_value=0, tolerance=0.00001):
@@ -189,16 +174,12 @@ def get_foreground_from_set_of_files_withoutsave(scan_id, set_of_files, backgrou
     
     return foreground
 
-
-# In[83]:
-
-
+ 
 #set_of_files = ("Flair_res111.nii.gz", "T1_res111.nii.gz", "T13D_res111.nii.gz", "T2_res111.nii.gz")
 #nii_foreground = get_foreground_from_set_of_files_withoutsave("Pcnls_1", set_of_files)
 #show_plt(nii_foreground, 'nii_foreground')
 
-
-# In[61]:
+ 
 
 
 def get_multi_index(foreground, rtol=1e-8):
@@ -220,8 +201,7 @@ def get_multi_index(foreground, rtol=1e-8):
     slices = [slice(s, e) for s, e in zip(start, end)]
     return slices
 
-
-# In[62]:
+ 
 
 
 #crop = get_multi_index(nii_foreground)
@@ -229,8 +209,7 @@ def get_multi_index(foreground, rtol=1e-8):
 #crop_img_to("C:\\Users\\shezi\\T2_res111\\T2_res111_trans.nii.gz", crop, copy=True)
 
 
-# In[84]:
-
+ 
 
 def get_crop_images_list(scan_id, set_of_files, norm_set_of_files):
 #def get_crop_images(set_of_files, norm_set_of_files):
@@ -250,9 +229,7 @@ def get_crop_images_list(scan_id, set_of_files, norm_set_of_files):
         norm_resize_crop_image = rescale_intensity(resize_crop_image)
         crop_images.append(norm_resize_crop_image)
     return crop_images
-
-
-# In[85]:
+ 
 
 
 #set_of_files = ("Flair_res111.nii.gz", "T1_res111.nii.gz", "T13D_res111.nii.gz", "T2_res111.nii.gz")
@@ -260,8 +237,7 @@ def get_crop_images_list(scan_id, set_of_files, norm_set_of_files):
 #                     "T13D_res111\\T13D_res111_trans.nii.gz", "T2_res111\\T2_res111_trans.nii.gz")
 #nii_crop_images_list = get_crop_images_list("Pcnls_1", set_of_files, norm_set_of_files)
 
-
-# In[86]:
+ 
 
 
 #get_norm_resize_crop_image = nii_crop_images_list[0]
@@ -272,8 +248,7 @@ def get_crop_images_list(scan_id, set_of_files, norm_set_of_files):
 #print(f"image.shape: {get_norm_resize_crop_image.mean()}")
 #show_plt(get_norm_resize_crop_image, "norm_resize_crop_image")
 
-
-# In[108]:
+ 
 
 #norm_set_of_files = ("Flair_res111/Flair_res111_trans.nii.gz", "T1_res111/T1_res111_trans.nii.gz",
 #                     "T13D_res111/T13D_res111_trans.nii.gz", "T2_res111/T2_res111_trans.nii.gz")
@@ -305,12 +280,7 @@ def load_image_3d(scan_id="Pcnls_1",
     
     #return np.expand_dims(img3d, 0)
    
-
-
-
-
-# In[88]:
-
+ 
 
 #torch.tensor(np.array(a))
 
