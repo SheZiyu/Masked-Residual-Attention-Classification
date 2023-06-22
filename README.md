@@ -1,4 +1,4 @@
-# Unsupervised-Residual-Attention-Classification
+# Masked-Residual-Attention-Classification
 
 The code is derivated from the following paper and GitHub repository:
 
