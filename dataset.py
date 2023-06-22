@@ -2,24 +2,13 @@
 
 # coding: utf-8
 
-# In[1]:
-
-
-
-
-# In[2]:
+ 
 
 import preprocessing
 from preprocessing import *
 
-
-# In[88]:
-
-
-#torch.tensor(np.array(a))
-
-
-# In[89]:
+ 
+ 
 
 
 data_directory="/data/down"
@@ -51,14 +40,7 @@ df_train, df_valid, dummies_train, products_train, y_train, dummies_valid, produ
     random_state)
 
 
-
-# In[90]:
-
-
-#df_train.head()#tail
-
-
-# In[91]:
+ 
 
 
 class Dataset(torch_data.Dataset):
